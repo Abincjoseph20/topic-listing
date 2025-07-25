@@ -166,7 +166,7 @@ body {
 }
 
 /* Special handling for cards in the first row */
-.topic-card:nth-child(-n+4){
+.topic-card:nth-child(-n+4) {
     /* Limit hover effect for top row cards */
 }
 

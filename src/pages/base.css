@@ -35,8 +35,8 @@ body {
 
 .content-container {
   flex: 1;
-  /* Use CSS custom property for dynamic navbar height + extra spacing */
-  padding-top: calc(var(--navbar-height, 80px) + 1rem);
+  /* Use CSS custom property for dynamic navbar height */
+  padding-top: var(--navbar-height, 80px);
   overflow-y: auto;
 }
 
@@ -77,9 +77,9 @@ nav a:hover {
   width: 100%;
   max-width: none;
   margin: 0;
-  padding: clamp(1rem, 3vw, 2rem);
+  padding: clamp(1.5rem, 3vw, 2rem);
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-  min-height: calc(100vh - var(--navbar-height, 80px) - 1rem);
+  min-height: calc(100vh - var(--navbar-height, 80px));
   box-sizing: border-box;
   position: relative;
   z-index: 1;
@@ -265,12 +265,12 @@ nav a:hover {
     }
     
     .content-container {
-        padding-top: calc(var(--navbar-height, 70px) + 0.75rem);
+        padding-top: var(--navbar-height, 70px);
     }
     
     .topics-container {
         padding: clamp(1rem, 2.5vw, 1.5rem);
-        min-height: calc(100vh - var(--navbar-height, 70px) - 0.75rem);
+        min-height: calc(100vh - var(--navbar-height, 70px));
     }
     
     .topics-grid {
@@ -295,12 +295,12 @@ nav a:hover {
     }
     
     .content-container {
-        padding-top: calc(var(--navbar-height, 65px) + 0.5rem);
+        padding-top: var(--navbar-height, 65px);
     }
     
     .topics-container {
         padding: clamp(0.75rem, 2.5vw, 1.25rem);
-        min-height: calc(100vh - var(--navbar-height, 65px) - 0.5rem);
+        min-height: calc(100vh - var(--navbar-height, 65px));
     }
     
     .header {
@@ -338,12 +338,12 @@ nav a:hover {
     }
     
     .content-container {
-        padding-top: calc(var(--navbar-height, 60px) + 0.5rem);
+        padding-top: var(--navbar-height, 60px);
     }
     
     .topics-container {
         padding: clamp(0.5rem, 2vw, 1rem);
-        min-height: calc(100vh - var(--navbar-height, 60px) - 0.5rem);
+        min-height: calc(100vh - var(--navbar-height, 60px));
     }
     
     .topics-grid {
@@ -364,7 +364,7 @@ nav a:hover {
         margin-left: auto;
         margin-right: auto;
         padding: 2rem;
-        min-height: calc(100vh - var(--navbar-height, 80px) - 1rem);
+        min-height: calc(100vh - var(--navbar-height, 80px));
     }
     
     .topics-grid {
@@ -378,7 +378,7 @@ nav a:hover {
 @media (min-width: 1800px) {
     .topics-container {
         max-width: 1800px;
-        min-height: calc(100vh - var(--navbar-height, 80px) - 1rem);
+        min-height: calc(100vh - var(--navbar-height, 80px));
     }
     
     .topics-grid {
