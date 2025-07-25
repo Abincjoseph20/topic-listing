@@ -1,0 +1,456 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Root container */
+#root {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Main content container - Enhanced with better spacing */
+.topics-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: clamp(1rem, 3vw, 2rem);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  min-height: 100vh;
+  box-sizing: border-box;
+  /* Significantly increased top margin to provide more buffer space */
+  margin-top: 120px;
+  /* Add z-index to ensure proper stacking order */
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: clamp(2rem, 5vw, 3rem);
+    padding: 1rem 0;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    /* Ensure header doesn't interfere with navbar */
+    position: relative;
+    z-index: 2;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 600;
+    color: #8b5cf6;
+}
+
+.header-icon {
+    width: clamp(2rem, 5vw, 2.5rem);
+    height: clamp(2rem, 5vw, 2.5rem);
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    flex-shrink: 0;
+}
+
+.theme-toggle {
+    width: clamp(2.5rem, 6vw, 3rem);
+    height: clamp(2.5rem, 6vw, 3rem);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Topics grid - Enhanced with better spacing */
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  width: 100%;
+  padding: 0;
+  margin-top: 20px;
+  /* Add extra padding to top row to ensure full visibility */
+  padding-top: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* Topic card - Improved hover effects */
+.topic-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: visible; /* Changed from hidden to allow proper shadow display */
+    backdrop-filter: blur(20px);
+    min-height: clamp(120px, 15vw, 140px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    /* Ensure cards don't overlap navbar */
+    z-index: 3;
+}
+
+.topic-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(168, 85, 247, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    border-radius: 16px;
+}
+
+.topic-card:hover::before {
+    opacity: 1;
+}
+
+/* Enhanced hover effect with better transform limits */
+.topic-card:hover {
+    /* Reduced translateY to prevent navbar overlap */
+    transform: translateY(-6px) scale(1.015);
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 
+        0 15px 35px rgba(139, 92, 246, 0.15),
+        0 0 0 1px rgba(139, 92, 246, 0.2);
+    /* Temporarily increase z-index on hover */
+    z-index: 10;
+}
+
+.topic-card:active {
+    transform: translateY(-3px) scale(1.01);
+}
+
+/* Special handling for cards in the first row */
+.topic-card:nth-child(-n+4){
+    /* Limit hover effect for top row cards */
+}
+
+.topic-card:nth-child(-n+4):hover {
+    /* Reduced upward movement for top row */
+    transform: translateY(-3px) scale(1.015);
+}
+
+/* Topic card content */
+.topic-title {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+    line-height: 1.3;
+}
+
+.topic-card:hover .topic-title {
+    color: #a855f7;
+}
+
+.topic-description {
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    color: rgba(255, 255, 255, 0.6);
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+    line-height: 1.4;
+}
+
+.topic-card:hover .topic-description {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Featured topics */
+.topic-card.featured {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(168, 85, 247, 0.1));
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+.topic-card.featured .topic-title {
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Navbar styles - Enhanced with better z-index management */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.98); /* Nearly black with opacity */
+    backdrop-filter: blur(25px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 70px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav a {
+    color: #8b5cf6; /* Indigo text */
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #a855f7;
+}
+
+/* Responsive adjustments */
+
+
+@media (max-width: 1024px) {
+    .topics-grid {
+        grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+    }
+    
+    /* Adjust top row hover effect for medium screens */
+    .topic-card:nth-child(-n+3):hover {
+        transform: translateY(-3px) scale(1.015);
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        height: 60px;
+        padding: 0.75rem 1.5rem;
+    }
+    
+    .topics-container {
+        margin-top: 100px; /* Increased for mobile navbar */
+        padding: clamp(1rem, 2.5vw, 1.5rem);
+    }
+    
+    .topics-grid {
+        grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+        gap: clamp(0.75rem, 2vw, 1.25rem);
+        padding-top: clamp(0.75rem, 1.5vw, 1.25rem);
+    }
+    
+    .header {
+        margin-bottom: clamp(1.5rem, 4vw, 2rem);
+    }
+    
+    /* Adjust for 2 columns on tablet */
+    .topic-card:nth-child(-n+2):hover {
+        transform: translateY(-3px) scale(1.015);
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        height: 55px;
+        padding: 0.5rem 1rem;
+    }
+    
+    nav a {
+        font-size: 1.25rem;
+    }
+    
+    .topics-container {
+        margin-top: 95px; /* Increased for small mobile navbar */
+        padding: clamp(0.75rem, 2.5vw, 1.25rem);
+    }
+    
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+        margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    }
+    
+    .header-title {
+        justify-content: center;
+    }
+    
+    .topics-grid {
+        grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+        gap: clamp(0.75rem, 2vw, 1rem);
+        padding-top: 1rem;
+    }
+    
+    .topic-card {
+        min-height: clamp(100px, 12vw, 120px);
+        padding: clamp(1rem, 2.5vw, 1.5rem);
+    }
+    
+    /* Single column - only first card needs special treatment */
+    .topic-card:first-child:hover {
+        transform: translateY(-3px) scale(1.015);
+    }
+}
+
+@media (max-width: 360px) {
+    nav {
+        height: 50px;
+        padding: 0.5rem;
+    }
+    
+    nav a {
+        font-size: 1.1rem;
+    }
+    
+    .topics-container {
+        margin-top: 90px; /* Increased for extra small navbar */
+        padding: clamp(0.5rem, 2vw, 1rem);
+    }
+    
+    .topics-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding-top: 1rem;
+    }
+    
+    .topic-card {
+        padding: 1rem;
+        min-height: 100px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1400px) {
+    .topics-container {
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 120px; /* Consistent with main value */
+        padding: 2rem;
+    }
+    
+    .topics-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2rem;
+        padding-top: 1.5rem;
+    }
+    
+    /* Adjust for larger grid on desktop */
+    .topic-card:nth-child(-n+5):hover {
+        transform: translateY(-4px) scale(1.015);
+    }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1800px) {
+    .topics-container {
+        max-width: 1800px;
+        margin-top: 120px; /* Consistent with main value */
+    }
+    
+    .topics-grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2.5rem;
+        padding-top: 2rem;
+    }
+    
+    /* Adjust for even larger grid */
+    .topic-card:nth-child(-n+6):hover {
+        transform: translateY(-5px) scale(1.015);
+    }
+}
+
+/* Animations */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.topic-card.loading {
+    background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.5);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 92, 246, 0.7);
+}
+
+/* Print styles */
+@media print {
+    .topics-container {
+        background: white;
+        color: black;
+        padding: 1rem;
+        margin-top: 0;
+    }
+    
+    .topic-card {
+        border: 1px solid #ddd;
+        background: white;
+        break-inside: avoid;
+    }
+    
+    .theme-toggle {
+        display: none;
+    }
+}
