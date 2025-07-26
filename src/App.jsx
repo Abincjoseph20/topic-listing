@@ -24,7 +24,7 @@ import NextJS from './Topics/NextJs';
 import NodeExpress from './Topics/NodeExpress';
 import Others from './Topics/Others';
 import PHP from './Topics/Php';
-import Reacts from './Topics/react';
+import Reacts from './Topics/Reacts';
 import ReactNative from './Topics/ReactNative';
 import Redux from './Topics/Redux';
 import Robotics from './Topics/Robotics';
@@ -74,7 +74,7 @@ function App() {
 
             <Route path="PHP/" element={<PHP/>} />
 
-            <Route path="Reacts/>" element={<Reacts/>} />
+            <Route path="Reacts/>" element={<Reacts />} />
             <Route path="ReactNative/" element={<ReactNative/>} />
 
             <Route path="Redux/" element={<Redux/>} />
