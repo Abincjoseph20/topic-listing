@@ -1,7 +1,8 @@
+// App.js - Optimized Structure
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Navbar from './components/Navbar';
 import Base from './pages/base';
-import Navbar from './pages/Navbar';
 import Python3 from './components/python3';
 
 function App() {

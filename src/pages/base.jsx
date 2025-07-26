@@ -152,7 +152,7 @@ function Base() {
         {topics.map((topic, index) => (
           <div
             key={index}
-            className={`topic-card ${topic.featured ? 'featured' : ''}`}
+            className="topic-card"
             onClick={() => handleTopicClick(topic.path)}
           >
             <h3 className="topic-title">{topic.title}</h3>
