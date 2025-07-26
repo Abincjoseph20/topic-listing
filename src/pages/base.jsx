@@ -129,7 +129,28 @@ function Base() {
             title: "Others",
             description: "Docs for Other Topics",
             path: "/Others"
+        },
+        {
+            title: "AI & ML",
+            description: "Docs for Other Topics",
+            path: "/AIML"
+        },
+        {
+            title: "Robotics",
+            description: "Docs for Other Topics",
+            path: "/Robotics"
+        },
+        {
+            title: "Django",
+            description: "Docs for Other Topics",
+            path: "/Django"
+        },
+        {
+            title: "PHP",
+            description: "Docs for Other Topics",
+            path: "/Php"
         }
+
     ];
 
     const handleTopicClick = (path) => {
@@ -144,7 +165,7 @@ function Base() {
           Topics to Learn
         </div>
         <div className="theme-toggle">
-          🌙
+          🌙 
         </div>
       </div>
       

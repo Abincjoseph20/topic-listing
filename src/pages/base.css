@@ -1,4 +1,4 @@
-body, html, #root {
+#root {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -82,4 +82,3 @@ body, html, #root {
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.7);
 }
-
