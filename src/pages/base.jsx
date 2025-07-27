@@ -161,12 +161,8 @@ function Base() {
     <div className="topics-container">
       <div className="header">
         <div className="header-title">
-          <div className="header-icon">📚</div>
-          Topics to Learn
         </div>
-        <div className="theme-toggle">
-          🌙 
-        </div>
+        
       </div>
       
       <div className="topics-grid">
