@@ -36,12 +36,12 @@ function Base() {
         ,
         {
             title: "ReactJS",
-            description: "Docs for Other Topics",
+            description: "Docs for React JS",
             path: "/ReactJS"
         },
         {
             title: "Django",
-            description: "Docs for Other Topics",
+            description: "Docs for Django",
             path: "/Django"
         },
         {
@@ -138,22 +138,17 @@ function Base() {
         },
         {
             title: "AI & ML",
-            description: "Docs for Other Topics",
+            description: "Docs for AI & ML",
             path: "/AIML"
         },
         {
             title: "Robotics",
-            description: "Docs for Other Topics",
+            description: "Docs for Robotics",
             path: "/Robotics"
         },
         {
-            title: "Django",
-            description: "Docs for Other Topics",
-            path: "/Django"
-        },
-        {
             title: "PHP",
-            description: "Docs for Other Topics",
+            description: "Docs for PHP",
             path: "/Php"
         }
 
