@@ -22,6 +22,7 @@ function Base() {
             path: "/python3",
             featured: true
         },
+        
         {
             title: "Node & Express",
             description: "Docs for Node & Express",
@@ -38,7 +39,11 @@ function Base() {
             description: "Docs for Other Topics",
             path: "/ReactJS"
         },
-    
+        {
+            title: "Django",
+            description: "Docs for Other Topics",
+            path: "/Django"
+        },
         {
             title: "Redux",
             description: "Docs for Redux",
