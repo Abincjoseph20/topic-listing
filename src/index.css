@@ -1,3 +1,5 @@
+/* index.css */
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -69,13 +71,17 @@ button:focus-visible {
 
 
 :root {
-  --bg-color: white;
-  --text-color: rgb(109, 242, 120);
+  --bg-color: rgb(255, 255, 255);
+  --text-color: rgb(77, 99, 57);
+  --navbar-bg: rgba(255, 255, 255, 0.95);  /* light navbar */
+  --navbar-text: rgb(1, 0, 1);         /* light text */
 }
 
 body[data-theme='dark'] {
-  --bg-color: #06511c;
-  --text-color: white;
+  --bg-color: rgba(10, 10, 10, 0.95);
+  --text-color: rgb(176, 210, 37);
+  --navbar-bg: rgba(10, 10, 10, 0.95);      /* dark navbar */
+  --navbar-text: rgb(255, 255, 255);       /* dark text */
 }
 
 body {
@@ -83,4 +89,6 @@ body {
   color: var(--text-color);
   transition: background 0.3s, color 0.3s;
 }
+
+
 

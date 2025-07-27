@@ -31,13 +31,14 @@ function Base() {
             title: "MongoDB",
             description: "Docs for MongoDB",
             path: "/MongoDb"
-        },
+        }
+        ,
         {
-            title: "React",
-            description: "Docs for React",
-            path: "/react",
-            featured: true
+            title: "ReactJS",
+            description: "Docs for Other Topics",
+            path: "/ReactJS"
         },
+    
         {
             title: "Redux",
             description: "Docs for Redux",

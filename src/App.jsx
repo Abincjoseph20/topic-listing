@@ -24,7 +24,7 @@ import NextJS from './Topics/NextJs';
 import NodeExpress from './Topics/NodeExpress';
 import Others from './Topics/Others';
 import PHP from './Topics/Php';
-import Reacts from './Topics/Reacts';
+import ReactJS from './Topics/ReactJS';
 import ReactNative from './Topics/ReactNative';
 import Redux from './Topics/Redux';
 import Robotics from './Topics/Robotics';
@@ -33,6 +33,7 @@ import SystemDesign from './Topics/SystemDesign';
 import TypeORM from './Topics/TypeORM';
 import TypeScript from './Topics/TypeScript';
 import WorkFlow from './Topics/Workflow';
+
 
 
 function App() {
@@ -73,8 +74,7 @@ function App() {
             <Route path="Others/" element={<Others/>} />
 
             <Route path="PHP/" element={<PHP/>} />
-
-            <Route path="Reacts/>" element={<Reacts />} />
+            <Route path='ReactJS' element={<ReactJS/>}/>
             <Route path="ReactNative/" element={<ReactNative/>} />
 
             <Route path="Redux/" element={<Redux/>} />
@@ -84,6 +84,7 @@ function App() {
             <Route path="SystemDesign/" element={<SystemDesign/>} />
             <Route path="TypeORM/" element={<TypeORM/>} />
             <Route path="TypeScript/" element={<TypeScript/>} />
+
             <Route path="WorkFlow/" element={<WorkFlow/>} />
             
           </Routes>

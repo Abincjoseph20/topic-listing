@@ -12,18 +12,23 @@ function Navbar() {
     document.body.setAttribute("data-theme",setTheme);
   },[])
 
-  const ToggleTheme = ()=>{
-    const NewTheme = theme === "light" ? "dark" : "light";
-    setTheme(NewTheme)
-    document.body.setAttribute("data-theme",NewTheme);
-    localStorage.setItem("theme",NewTheme);
-  }
+  
+// Toggle between light and dark
+    const toggleTheme = () => {
+    const currentTheme = document.body.getAttribute("data-theme");
+    if (currentTheme === "dark") {
+      document.body.setAttribute("data-theme", "light");
+    } else {
+      document.body.setAttribute("data-theme", "dark");
+    }
+  };
+
 
 
   return (
     <nav className="navbar">
       <Link to="/">📚 Topics to Learn</Link>
-      <button className="theme-toggle" onClick={ToggleTheme}>
+      <button className="theme-toggle" onClick={toggleTheme}>
         {theme === "light" ? "🌙" : "🔆"}
       </button>
     </nav>
