@@ -29,4 +29,43 @@
   list-style-type: lower-roman;
 }
 
+/* python.css */
 
+.download-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 2rem;
+  background-color: var(--navbar-bg);
+}
+
+.download-button {
+  color: var(--navbar-text);
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block; /* Ensures transform works properly */
+}
+
+.topics-card {
+  background: rgba(114, 59, 59, 0.05);
+  border: 1px solid rgba(98, 148, 40, 0.1);
+  padding: 1.5rem;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.topics-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(34, 139, 34, 0.4); /* Hulk green glow */
+  border-color: rgba(34, 139, 34, 0.6);           /* Hulk green border */
+}
+
+.python-container {
+  padding: 2rem;
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Rest of your existing styles */

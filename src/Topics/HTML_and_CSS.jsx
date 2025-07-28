@@ -15,8 +15,12 @@ function HTML_and_CSS() {
 
   return (
     <div>
-      <h3   onClick={handlePrint}>📄 Download as PDF</h3>
-      
+      <div className="download-container">
+        <div onClick={handlePrint} className="download-button topics-card">
+          📄 Download as PDF
+        </div>
+      </div>
+
       <div ref={DownloadRef} className="python-container">
         
         <h1>HTML &amp; CSS</h1>
