@@ -29,7 +29,7 @@ function Navbar() {
     <nav className="navbar">
       <Link to="/">📚 Topics to Learn</Link>
       <button className="theme-toggle" onClick={toggleTheme}>
-        {theme === "light" ? "🌙" : "🔆"}
+        {theme === "dark" ? "🌙" : "🔆"}
       </button>
     </nav>
   );

@@ -1,8 +1,23 @@
+import React, { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
 import './css/python.css';
 
 function JS() {
+  const DownloadRef = useRef();
+
+  const handlePrint = useReactToPrint({
+      contentRef: DownloadRef, // Use contentRef instead of content
+      documentTitle: "JS_Notes"
+    });
+
   return (
-    <div className="python-container">
+    <div >
+       <div className="download-container">
+        <div onClick={handlePrint} className="download-button topics-card">
+          📄 Download as PDF
+        </div>
+      </div>
+    <div ref={DownloadRef} className="python-container">
       <h1>JavaScript</h1>
 
       {/* DOM */}
@@ -329,7 +344,7 @@ function JS() {
         <li>Explain the difference between <code>map()</code>, <code>filter()</code>, and <code>reduce()</code>.</li>
         <li>What is the difference between <code>undefined</code> and <code>null</code>?</li>
       </ol>
-
+    </div>
     </div>
   );
 }

@@ -1,9 +1,24 @@
+import React, { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
 import './css/python.css';
 
-
 function Redux() {
+  const DownloadRef = useRef();
+
+  const handlePrint = useReactToPrint({
+        contentRef: DownloadRef, // Use contentRef instead of content
+        documentTitle: "Redux_Notes"
+      });
+
   return (
-    <div className="python-container">
+    <div >
+      <div className="download-container">
+        <div onClick={handlePrint} className="download-button topics-card">
+          📄 Download as PDF
+        </div>
+      </div>
+
+    <div ref={DownloadRef} className="python-container">
       <h1>Redux</h1>
 
       <h2>Theory</h2>
@@ -129,6 +144,7 @@ function Redux() {
         <li>When should you use public vs private tokens?</li>
         <li>What security risks exist with JWT and how can you prevent them?</li>
       </ul>
+    </div>
     </div>
   );
 }

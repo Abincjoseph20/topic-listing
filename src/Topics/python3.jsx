@@ -1,8 +1,25 @@
+
+import React, { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
 import './css/python.css';
 
 function Python3() {
+  const DownloadRef = useRef();
+
+  const handlePrint = useReactToPrint({
+        contentRef: DownloadRef, // Use contentRef instead of content
+        documentTitle: "python_Notes"
+      });
+
   return (
-    <div className="python-container">
+    <div >
+      <div className="download-container">
+        <div onClick={handlePrint} className="download-button topics-card">
+          📄 Download as PDF
+        </div>
+      </div>
+
+    <div ref={DownloadRef} className="python-container">
       <h1>Topics to Learn</h1>
       <h2>Python</h2>
 
@@ -176,6 +193,7 @@ function Python3() {
         <li>Multithreading</li>
         <li>split</li>
       </ol>
+    </div>
     </div>
   );
 }

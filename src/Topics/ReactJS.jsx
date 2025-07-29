@@ -1,8 +1,24 @@
+import React, { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
 import './css/python.css';
 
 function ReactJS() {
+  const DownloadRef = useRef();
+
+  const handlePrint = useReactToPrint({
+        contentRef: DownloadRef, // Use contentRef instead of content
+        documentTitle: "ReactJS_Notes"
+      });
+
   return (
-    <div className="python-container">
+    <div >
+      <div className="download-container">
+        <div onClick={handlePrint} className="download-button topics-card">
+          📄 Download as PDF
+        </div>
+      </div>
+
+    <div ref={DownloadRef} className="python-container">
       <h1>React</h1>
 
       <h2>Set up</h2>
@@ -346,6 +362,7 @@ function ReactJS() {
         <li>Difference between SSR, CSR, and SSG?</li>
         <li>How does batching work in React?</li>
       </ol>
+    </div>
     </div>
   );
 }

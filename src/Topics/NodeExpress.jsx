@@ -1,8 +1,25 @@
+
+import React, { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
 import './css/python.css';
 
 function NodeExpress() {
+  const DownloadRef = useRef();
+
+  const handlePrint = useReactToPrint({
+        contentRef: DownloadRef, // Use contentRef instead of content
+        documentTitle: "Node_&_Express_Notes"
+      });
+
   return (
-    <div className="python-container">
+    <div >
+      <div className="download-container">
+        <div onClick={handlePrint} className="download-button topics-card">
+          📄 Download as PDF
+        </div>
+      </div>
+
+    <div ref={DownloadRef} className="python-container">
       <h1>Node.js, Express</h1>
 
       {/* Node */}
@@ -428,7 +445,7 @@ function NodeExpress() {
           </ul>
         </li>
       </ol>
-
+  </div>
     </div>
   );
 }

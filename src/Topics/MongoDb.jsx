@@ -1,8 +1,24 @@
+import React, { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
 import './css/python.css';
 
 function MongoDB() {
+  const DownloadRef = useRef();
+
+  const handlePrint = useReactToPrint({
+        contentRef: DownloadRef, // Use contentRef instead of content
+        documentTitle: "MongoDB_Notes"
+      });
+
   return (
-    <div className="python-container">
+    <div >
+      <div className="download-container">
+        <div onClick={handlePrint} className="download-button topics-card">
+          📄 Download as PDF
+        </div>
+      </div>
+
+    <div ref={DownloadRef} className="python-container">
       <h1>MongoDB</h1>
 
       {/* Theory */}
@@ -546,6 +562,7 @@ function MongoDB() {
         <li>Clustered collections</li>
         <li>WAL (Write-Ahead Logging)</li>
       </ol>
+    </div>
     </div>
   );
 }

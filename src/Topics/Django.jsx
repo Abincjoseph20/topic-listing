@@ -1,8 +1,24 @@
+import React, { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
 import './css/python.css';
 
 function Django() {
+  const DownloadRef = useRef();
+
+  const handlePrint = useReactToPrint({
+        contentRef: DownloadRef, // Use contentRef instead of content
+        documentTitle: "Django_Notes"
+      });
+
   return (
-    <div className="python-container">
+    <div >
+      <div className="download-container">
+        <div onClick={handlePrint} className="download-button topics-card">
+          📄 Download as PDF
+        </div>
+      </div>
+
+    <div ref={DownloadRef} className="python-container">
       <h1>Django (Python Web Framework)</h1>
 
       <h2>Set up</h2>
@@ -17,7 +33,7 @@ function Django() {
 
       <h2>Basics</h2>
       <ol start="7">
-        <li>MTV Architecture (Model, Template, View)</li>
+        <li>MVT Architecture (Model, View,Template)</li>
         <li>
           Models
           <ul>
@@ -105,6 +121,7 @@ function Django() {
         <li>How is REST API handled in Django?</li>
         <li>Difference between AbstractUser and AbstractBaseUser?</li>
       </ol>
+    </div>
     </div>
   );
 }

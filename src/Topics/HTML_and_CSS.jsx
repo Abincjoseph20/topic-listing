@@ -78,7 +78,7 @@ function HTML_and_CSS() {
         </ol>
 
         {/* HTML Questions */}
-        <h3>🔍 HTML Questions</h3>
+        <h3> HTML Questions</h3>
         <ul>
           <li>What is the difference between block and inline elements?</li>
           <li>What is the purpose of the <code>{"<!DOCTYPE>"}</code> declaration?</li>
@@ -103,7 +103,7 @@ function HTML_and_CSS() {
         </ol>
 
         {/* CSS Questions */}
-        <h3>🔍 CSS Questions</h3>
+        <h3> CSS Questions</h3>
         <ul>
           <li>What is the CSS Box Model?</li>
           <li>What is the difference between ID and class selectors?</li>
