@@ -27,7 +27,7 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <Link to="/">📚 Topics to Learn</Link>
+      <Link to="/">📚 TechSyllabus Hub</Link>
       <button className="theme-toggle" onClick={toggleTheme}>
         {theme === "dark" ? "🌙" : "🔆"}
       </button>
