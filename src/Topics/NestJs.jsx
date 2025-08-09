@@ -1,34 +1,68 @@
+import React, { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
 import './css/python.css';
 
 function NestJS() {
+  const DownloadRef = useRef();
+
+  const handlePrint = useReactToPrint({
+    content: () => DownloadRef.current, // ✅ Correct way to set content
+    documentTitle: "NestJS_Notes"
+  });
+
   return (
-    <div className="python-container">
-      <h1>Python</h1>
-      <h2>Basic</h2>
-      <ol>
-        <li>Syntax</li>
-        <li>Variables and Data Types</li>
-        <li>Integers</li>
-        <li>Floats</li>
-        <li>Strings</li>
-        <li>Booleans</li>
-        <li>Lists</li>
-        <li>Tuples</li>
-        <li>Dictionaries</li>
-        <li>Sets</li>
-        <li>Type casting</li>
-        <li>Indexes and Negative Indexes</li>
-        <li>Slicing</li>
-        <li>Scope of variables</li>
-        <li>
-          Operators
-          <ul type="i">
-            <li>Arithmetic Operators</li>
-            <li>Comparison Operators</li>
-            <li>Logical Operators</li>
-          </ul>
-        </li>
-      </ol>
+    <div>
+      <div className="download-container">
+        <div onClick={handlePrint} className="download-button topics-card">
+          📄 Download as PDF
+        </div>
+      </div>
+
+      <div ref={DownloadRef} className="python-container">
+        <h1>NestJS</h1>
+        <h2>Basic to Advanced</h2>
+        <ol>
+          <li>Introduction to NestJS</li>
+          <li>Project Setup</li>
+          <li>Modules</li>
+          <li>Controllers</li>
+          <li>Services & Dependency Injection</li>
+          <li>Providers</li>
+          <li>Routing</li>
+          <li>Middleware</li>
+          <li>Exception Filters</li>
+          <li>Pipes</li>
+          <li>Guards</li>
+          <li>Interceptors</li>
+          <li>Configuration Management</li>
+          <li>Database Integration
+            <ul type="i">
+              <li>TypeORM</li>
+              <li>Mongoose</li>
+            </ul>
+          </li>
+          <li>Authentication & Authorization (JWT, Passport)</li>
+          <li>File Upload</li>
+          <li>Validation</li>
+          <li>Event-based Communication</li>
+          <li>WebSockets</li>
+          <li>Microservices</li>
+          <li>Testing
+            <ul type="i">
+              <li>Unit Testing</li>
+              <li>e2e Testing</li>
+            </ul>
+          </li>
+          <li>Deployment</li>
+          <li>Advanced Patterns
+            <ul type="i">
+              <li>Custom Decorators</li>
+              <li>Dynamic Modules</li>
+              <li>Monorepo Support</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
     </div>
   );
 }

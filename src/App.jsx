@@ -17,7 +17,7 @@ import GraphQL from './Topics/GraphQL';
 import Hosting from './Topics/Hosting';
 import JS from './Topics/JS';
 import Kubernetes from './Topics/Kubernetes';
-import Microservice from './Topics/Microservices';
+import Microservices from './Topics/Microservices';
 import MongoDB from './Topics/MongoDb';
 import NestJS from './Topics/NestJs';
 import NextJS from './Topics/NextJs';
@@ -64,7 +64,7 @@ function App() {
             <Route path="JS/" element={<JS/>} />
 
             <Route path="Kubernetes/" element={<Kubernetes/>} />
-            <Route path="Microservice/" element={<Microservice/>} />
+            <Route path="/Microservices" element={<Microservices/>} />
             <Route path="MongoDB/" element={<MongoDB/>} />
 
             <Route path="NestJS/" element={<NestJS/>} />

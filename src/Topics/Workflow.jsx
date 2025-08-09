@@ -1,34 +1,52 @@
+import React, { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
 import './css/python.css';
 
 function WorkFlow() {
+  const DownloadRef = useRef();
+
+  const handlePrint = useReactToPrint({
+          contentRef: DownloadRef, // Use contentRef instead of content
+          documentTitle: "SQL_Notes"
+        });
+
+
   return (
-    <div className="python-container">
-      <h1>Python</h1>
-      <h2>Basic</h2>
+     <div >
+      <div className="download-container">
+        <div onClick={handlePrint} className="download-button topics-card">
+          📄 Download as PDF
+        </div>
+      </div>
+
+    <div ref={DownloadRef} className="python-container">
+      <h1>WorkFlow</h1>
+      <h2>Basic Stages</h2>
       <ol>
-        <li>Syntax</li>
-        <li>Variables and Data Types</li>
-        <li>Integers</li>
-        <li>Floats</li>
-        <li>Strings</li>
-        <li>Booleans</li>
-        <li>Lists</li>
-        <li>Tuples</li>
-        <li>Dictionaries</li>
-        <li>Sets</li>
-        <li>Type casting</li>
-        <li>Indexes and Negative Indexes</li>
-        <li>Slicing</li>
-        <li>Scope of variables</li>
+        <li>Idea Generation</li>
+        <li>Requirement Gathering</li>
+        <li>Planning</li>
+        <li>Task Breakdown</li>
+        <li>Resource Allocation</li>
+        <li>Timeline Creation</li>
+        <li>Execution</li>
+        <li>Collaboration & Communication</li>
+        <li>Progress Tracking</li>
+        <li>Quality Checks</li>
+        <li>Iteration & Improvement</li>
+        <li>Review & Feedback</li>
+        <li>Approval Process</li>
+        <li>Final Delivery</li>
         <li>
-          Operators
+          Post-Delivery Processes
           <ul type="i">
-            <li>Arithmetic Operators</li>
-            <li>Comparison Operators</li>
-            <li>Logical Operators</li>
+            <li>Documentation</li>
+            <li>Retrospective Meeting</li>
+            <li>Archiving</li>
           </ul>
         </li>
       </ol>
+    </div>
     </div>
   );
 }
