@@ -26,7 +26,7 @@ function DSASyllabus() {
 
       <h2>Weekly Plan</h2>
       <p>The following table outlines the 17-week plan, detailing the focus topic, key concepts, and Python tools for each week.</p>
-      <table>
+      <table className='topics-table'>
         <thead>
           <tr>
             <th>Week</th>

@@ -105,3 +105,18 @@
   margin: 0;
   border: none;
 }
+
+
+.python-container table {
+  border-collapse: collapse;
+  width: 100%;
+  
+}
+
+.python-container table,
+.python-container th,
+.python-container td {
+  border: 1px solid var(--navbar-text);
+  padding: 8px;
+}
+
